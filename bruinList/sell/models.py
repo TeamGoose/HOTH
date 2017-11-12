@@ -5,10 +5,10 @@ import datetime
 # Create your models here.
 
 class sellEntry (models.Model):
-	itemName = models.CharField(max_length = 50)
-	sellerName = models.CharField(max_length = 50)
-	description = models.CharField(max_length = 100)
-	datePosted = models.CharField(max_length = 50)
+	itemName = models.CharField(max_length = 50, default = "")
+	sellerName = models.CharField(max_length = 50, default = "")
+	description = models.CharField(max_length = 100, default = "")
+	datePosted = models.CharField(max_length = 50, default = "")
 	dateAndTimeNow = datetime.datetime.now()
 	year = str(dateAndTimeNow.year)
 	month = str(dateAndTimeNow.month)
@@ -17,6 +17,9 @@ class sellEntry (models.Model):
 	minute = str(dateAndTimeNow.minute)
 	dateDB = year + '/' + month + '/' + day + "/" + hour + '/' + minute
 	datePosted = dateDB
-	locationOfSeller = models.CharField(max_length = 100)
-	
-
+	locationOfSeller = models.CharField(max_length = 100, default = "")
+	price = models.DecimalField(max_digits=10, decimal_places=2, default = 0)
+	latOfSeller = models.DecimalField(max_digits = 10, decimal_places = 10,default = 0 )
+	longOfSeller = models.DecimalField(max_digits = 10, decimal_places = 10, default = 0)
+	emailSeller = models.CharField(max_length = 100, default = "")
+	sellerNumber = models.DecimalField(max_digits=10,decimal_places = 0, default = 0)
