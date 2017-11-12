@@ -21,7 +21,7 @@ def parseAllRawHTMLPages():
     for resto in restos:
         #a resto object is what is enlcosed in each tr tag in the table.
         restoName=str(str(resto.find('a').get('href')).split('/')[2])
-        print restoName
+        #print restoName
         #openingtimes=[]
         mealTimeDict={'Breakfast':'none',\
                           'Lunch':'none',\
@@ -39,14 +39,17 @@ def parseAllRawHTMLPages():
                 a,b=parseRawDate(str(result.find('span','hours-range').contents[0]))
                 mealTimeDict[mealTime[11:]]={'open':{'hour':a[0],'min':a[1]},'close':{'hour':b[0],'min':b[1]}}
                 #openingtimes.append([mealTime[11:],a,b])
-                print 'open at '+mealTime
-            else:
-                print 'closed at '+mealTime
+                #print 'open at '+mealTime
+            #else:
+                #print 'closed at '+mealTime
 
 
         #hallTimes[restoName]=openingtimes
         hallTimes[restoName]=mealTimeDict
-    return json.dumps(hallTimes)
+    f = open("dininghallTimes.json","w")
+    f.write(json.dumps(hallTimes))
+    f.close()
+    #return json.dumps(hallTimes)
 
 def parseRawDate(rawDateString):
     '''
@@ -68,7 +71,7 @@ def parseRawDate(rawDateString):
         else:
             openingTime.append(openingHour)
     else:
-        print 'opening is pm'
+        #print 'opening is pm'
         if openingHour ==12:#12 afternoon.
             openingTime.append(12)
         else:
@@ -82,7 +85,7 @@ def parseRawDate(rawDateString):
     closingAMPM=rawDateString.split(':')[2][3:5]
     closingHour=int(rawDateString.split(':')[1][-1]) if str(rawDateString.split(':')[1][-2])==' ' else int(rawDateString.split(':')[1][-2:])
     if closingAMPM=='am':
-        print 'closing is am'
+        #print 'closing is am'
         if closingHour==12:
             closingTime.append(0)
         else:
@@ -105,4 +108,4 @@ def parseRawDate(rawDateString):
     return openingTime,closingTime
 
 
-parseRawHTMLPages()
+parseAllRawHTMLPages()
