@@ -6,4 +6,4 @@ class SellForm(forms.Form):
 	description = form.CharField(max_length = 100) 
 	price = form.DecimalField(max_length = 10, decimal_places = 2)
 	emailSeller = form.CharField(max_length = 100)
-	sellerNumber = form.IntegerField(max_length = 50)
+	sellerNumber = form.CharField(max_length = 10)
