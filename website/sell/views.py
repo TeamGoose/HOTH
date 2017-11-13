@@ -7,7 +7,7 @@ def index (request):
 	return HttpResponse('<h1> Sell </h1>')
 
 def getSale (request):
-	if request.method = 'POST':
+	if request.method == 'POST':
 		form = SellForm(request.post)
 		if form.is_valid():
 			#process the data
