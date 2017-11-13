@@ -11,8 +11,14 @@ def getSale (request):
 		form = SellForm(request.post)
 		if form.is_valid():
 			#process the data
-
-
+			itemName = request.POST.get('itemName')
+			sellerName = request.POST.get('sellerName')
+			description = request.POST.get('description')
+			price = request.POST.get('price')
+			emailSeller = request.POST.get('emailSeller')
+			sellerNumber = request.POST.get('sellerNumber')
+			sell_form = sellForm(itemName = itemName, sellerName = sellerName, description = description, price = price, emailSeller = emailSeller, sellerNumber = sellerNumber)
+			sell_form.save()
 			return HttpResponseRedirect('/')
 
 		else:
