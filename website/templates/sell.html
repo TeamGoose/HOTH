@@ -2,7 +2,6 @@
 <html>
 <head>
 
-<link rel="stylesheet" type="text/css" href="style.css">
 
 <title> Sell </title>
 
@@ -11,7 +10,8 @@
 
   <h1>Bruin Sell</h1>
 
-  <form method="post">
+  <form action="/" method="POST">
+  {% csrf_token %}
   Your Name:<br>
   <input type="text" name="name" title="Full Name" style="color:#888;"
     value="Enter Your Name" onfocus="inputFocus(this)" onblur="inputBlur(this)"><br><br>
