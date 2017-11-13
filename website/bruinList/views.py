@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+
 # Create your views here.
 import sys
 
@@ -15,4 +16,4 @@ def index (request):
         #return HttpResponse('<h1> Bruin List </h1>')
     except ImportError:
         print('No Import')
-        return HttpResponse('<h1> No imports! </h1>')
+        return HttpResponse('<h1> Error! no forms!</h1>')
