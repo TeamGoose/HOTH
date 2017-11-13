@@ -3,7 +3,6 @@ import datetime
 
 
 # Create your models here.
-
 class sellEntry (models.Model):
 	itemName = models.CharField(max_length = 50, default = "")
 	sellerName = models.CharField(max_length = 50, default = "")
