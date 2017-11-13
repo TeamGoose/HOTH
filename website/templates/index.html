@@ -1,158 +1,20 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 
   <title>Bruin Exchange</title>
-
-<!--  <link rel="stylesheet" type="text/css" href="style.css">-->
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 <body>
 
   <h1>Bruin Exchange</h1>
-<div class = "indexItem">
+
   <a href="#" class="action-button shadow animate buy" >Buy</a>
-  <a href="#" class="action-button shadow animate sell">Sell</a>
-</div>
-<br>
-<br>
-<div class = "indexItem">
+  <a href="sell.html" class="action-button shadow animate sell">Sell</a>
 
+</ul>
 
- <!-- <h3For sale below: </h3>-->
- <div class = "buyList">
-
-
-  <ul>
-
-    {% if dbList %}
-        <ul>
-        {% for entry in dbList %}
-            <li><a href="/polls/{{ entry.id }}/">{{ entry.sellerEmail }} entry</a></li>
-        {% endfor %}
-       <li><a href="#">sample1. Selling a fridge for $50 at Rieber!!</a></li>
-   <li><a href="#">sample2</a></li>
-   <li><a href="#">sample3</a></li>
-   <li><a href="#">sample4</a></li>
-        </ul>
-    {% else %}
-        <p>No records are avaiable..</p>
-    {% endif %}
-  </ul>
-
-</div>
-
-</div>
 </body>
-
-
-
-
-
-<style>
-body {
-   background-color: #3284bf;
-   font-family: arial;
-   font-size: 20px;
-}
-
-h1 {
-   color: white;
-   text-align: center;
-}
-
-.animate
-{
-        transition: all 0.1s;
-        -webkit-transition: all 0.1s;
-}
-
-.action-button
-{
-          text-align: center,
-        position: center;
-        padding: 10px 40px;
-  margin: 0px 10px 10px 0px;
-  float: left;
-        border-radius: 10px;
-        font-family: arial;
-        font-size: 25px;
-        color: #FFF;
-        text-decoration: none;
-}
-
-.buy
-{
-
-  background-color: #F2CF66;
-        border-bottom: 5px solid #D1B358;
-        text-shadow: 0px -2px #D1B358;
-}
-.indexItem {margin: 50px 30px 100px 30px; }
-.sell
-{
-  background-color: #F2CF66;
-        border-bottom: 5px solid #D1B358;
-        text-shadow: 0px -2px #D1B358;
-}
-
-.action-button:active
-{
-        transform: translate(0px,5px);
-  -webkit-transform: translate(0px,5px);
-        border-bottom: 1px solid;
-}
-
-</style>
-
-<style>
-.buyList {
-  width: 800px;
-}
-
-h2 {
-  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
-}
-
-li:last-child {
-  border: none;
-}
-
-li a {
-  text-decoration: none;
-  color: #000;
-  display: block;
-  width: 1000px;
-
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-}
-
-li a:hover {
-  font-size: 30px;
-  background: #f6f6f6;
-}
-
-
-</style>
 </html>

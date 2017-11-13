@@ -9,6 +9,10 @@ h1 {
     text-align: center;
 }
 
+form {
+  color: white;
+}
+
 .animate
 {
 	transition: all 0.1s;
@@ -37,6 +41,13 @@ h1 {
 }
 
 .sell
+{
+  background-color: #F2CF66;
+	border-bottom: 5px solid #D1B358;
+	text-shadow: 0px -2px #D1B358;
+}
+
+.submit
 {
   background-color: #F2CF66;
 	border-bottom: 5px solid #D1B358;
