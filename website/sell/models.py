@@ -12,4 +12,4 @@ class sellEntry (models.Model):
 	latOfSeller = models.DecimalField(max_digits = 10, decimal_places = 10,default = 0 )
 	longOfSeller = models.DecimalField(max_digits = 10, decimal_places = 10, default = 0)
 	emailSeller = models.CharField(max_length = 100, default = "")
-	sellerNumber = models.DecimalField(max_digits=10,decimal_places = 0, default = 0)
+	sellerNumber = models.IntegerField(max_digits=10, default = 0)
