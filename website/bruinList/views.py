@@ -10,5 +10,5 @@ try:
 except ImportError:
     print('No Import')
 def index (request):
-	   db =1
+	db =1
         #return HttpResponse('<h1> Bruin List </h1>')
