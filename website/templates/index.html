@@ -24,6 +24,9 @@
 
 
  <!-- <h3For sale below: </h3>-->
+ <div class = "buyList">
+
+
   <ul>
 
     {% if dbList %}
@@ -31,7 +34,7 @@
         {% for entry in dbList %}
             <li><a href="/polls/{{ entry.id }}/">{{ entry.sellerEmail }} entry</a></li>
         {% endfor %}
-       <li><a href="#">sample1</a></li>
+       <li><a href="#">sample1. Selling a fridge for $50 at Rieber!!</a></li>
    <li><a href="#">sample2</a></li>
    <li><a href="#">sample3</a></li>
    <li><a href="#">sample4</a></li>
@@ -41,7 +44,7 @@
     {% endif %}
   </ul>
 
-
+</div>
 
 </div>
 </body>
@@ -70,6 +73,7 @@ h1 {
 
 .action-button
 {
+          text-align: center,
         position: center;
         padding: 10px 40px;
   margin: 0px 10px 10px 0px;
@@ -106,8 +110,8 @@ h1 {
 </style>
 
 <style>
-div {
-  width: 200px;
+.buyList {
+  width: 800px;
 }
 
 h2 {
@@ -135,7 +139,7 @@ li a {
   text-decoration: none;
   color: #000;
   display: block;
-  width: 200px;
+  width: 1000px;
 
   -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
   -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
