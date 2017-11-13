@@ -1,14 +1,18 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from ...sell.models import sellEntry
 # Create your views here.
 import sys
-sys.path.insert(0, "../sell")
-try:
-    from .models import sellEntry
-except ImportError:
-    print('No Import')
+
+
 def index (request):
-	db =1
+    try:
+        sys.path.insert(0, "../sell")
+        from sell.models import sellEntry
+        dbList = sellEntry.objects.all()#order_by('id')
+        context = {'dbList': dbList}
+        return render(request, 'index.html', context)
         #return HttpResponse('<h1> Bruin List </h1>')
+    except ImportError:
+        print('No Import')
+        return HttpResponse('<h1> No imports! </h1>')
