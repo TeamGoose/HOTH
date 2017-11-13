@@ -4,7 +4,8 @@ from django.views.generic import TemplateView
 
 # Create your views here.
 def index (request):
-	return HttpResponse('<h1> Sell </h1>')
+
+	return render(request, 'sell.html', {})
 
 def getSale (request):
 	if request.method == 'POST':
